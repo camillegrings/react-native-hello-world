@@ -5,14 +5,31 @@ export default class AppClass extends React.Component {
   constructor() {
     super();
     this.state = {
-      value: 0
+      value: 0,
     };
+  }
+
+  componentDidMount() {
+    // Executado após o render
+  }
+
+  shouldComponentUpdate() {
+    // Executado antes do componentDidUpdate
+    return true;
+  }
+
+  componentDidUpdate() {
+    // Executado após render quando ocorre setState
+  }
+
+  componentWillUnmount() {
+    // Executado quando o componente é desmontado
   }
 
   onPress() {
     const { value } = this.state;
     this.setState({
-      value: value + 1
+      value: value + 1,
     });
   }
 
@@ -35,24 +52,24 @@ const styles = StyleSheet.create({
     backgroundColor: "#E6E9EF",
     width: "100%",
     height: "100%",
-    padding: 100
+    padding: 100,
   },
   text: {
     textAlign: "center",
     fontSize: 20,
     color: "blue",
     marginBottom: 10,
-    fontWeight: "bold"
+    fontWeight: "bold",
   },
   button: {
     width: 220,
     height: 50,
     backgroundColor: "purple",
     paddingTop: 15,
-    marginTop: 50
+    marginTop: 50,
   },
   buttonText: {
     textAlign: "center",
-    color: "white"
-  }
+    color: "white",
+  },
 });
